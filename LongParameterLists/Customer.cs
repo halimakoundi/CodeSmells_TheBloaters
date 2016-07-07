@@ -14,16 +14,14 @@ namespace LongParameterLists
         {
             get
             {
-                return buildCustomerSummary(Address.City,
-                                            Address.Postcode,
-                                            Address.Country);
+                return buildCustomerSummary();
             }
         }
 
-        private string buildCustomerSummary(string customerCity, string customerPostCode, string customerCountry)
+        private string buildCustomerSummary()
         {
-            return Title + " " + FirstName + " " + LastName + ", " + customerCity + ", "
-                   + customerPostCode + ", " + customerCountry;
+            return Title + " " + FirstName + " " + LastName + ", " + Address.City + ", "
+                   + Address.Postcode + ", " + Address.Country;
         }
     }
 }
