@@ -14,14 +14,8 @@ namespace LongMethods
         {
             EffortManHours = effortManHours;
             Description = description;
-        }
-
-        public Issue(float effortManHours, string description, Priority priority)
-            : this(effortManHours, description)
-        {
-
             ValidateEffortManHours();
-            Priority = priority;
+            Priority = GetPriorityFor();
         }
 
         public void ValidateEffortManHours()
@@ -32,21 +26,21 @@ namespace LongMethods
             }
         }
 
-        public static Priority GetPriorityFor(float effortManHours)
+        public Priority GetPriorityFor()
         {
             var priority = Priority.Low;
 
-            if (effortManHours > 100)
+            if (EffortManHours > 100)
             {
                 priority = Priority.Medium;
             }
 
-            if (effortManHours > 250)
+            if (EffortManHours > 250)
             {
                 priority = Priority.High;
             }
 
-            if (effortManHours > 500)
+            if (EffortManHours > 500)
             {
                 priority = Priority.Critical;
             }

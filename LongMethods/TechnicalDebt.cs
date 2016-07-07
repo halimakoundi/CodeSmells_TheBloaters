@@ -20,7 +20,7 @@ namespace LongMethods
 
         public void Register(float effortManHours, string description)
         {
-            var issue = new Issue(effortManHours, description, Issue.GetPriorityFor(effortManHours));
+            var issue = new Issue(effortManHours, description);
 
             AddToTotal(effortManHours);
 
