@@ -20,35 +20,13 @@ namespace LongMethods
 
         public void Register(float effortManHours, string description)
         {
-            var issue = new Issue(effortManHours, description, GetPriorityFor(effortManHours));
+            var issue = new Issue(effortManHours, description, Issue.GetPriorityFor(effortManHours));
 
             AddToTotal(effortManHours);
 
             AddToIssues(issue);
 
             UpdateLastIssueDate();
-        }
-
-        private static Priority GetPriorityFor(float effortManHours)
-        {
-            var priority = Priority.Low;
-
-            if (effortManHours > 100)
-            {
-                priority = Priority.Medium;
-            }
-
-            if (effortManHours > 250)
-            {
-                priority = Priority.High;
-            }
-
-            if (effortManHours > 500)
-            {
-                priority = Priority.Critical;
-            }
-
-            return priority;
         }
 
         private void AddToTotal(float effortManHours)
