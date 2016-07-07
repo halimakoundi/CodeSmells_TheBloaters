@@ -15,7 +15,7 @@ namespace LongMethods
             EffortManHours = effortManHours;
             Description = description;
             ValidateEffortManHours();
-            Priority = GetPriorityFor();
+            Priority = GetPriority();
         }
 
         public void ValidateEffortManHours()
@@ -26,7 +26,7 @@ namespace LongMethods
             }
         }
 
-        public Priority GetPriorityFor()
+        public Priority GetPriority()
         {
             var priority = Priority.Low;
 
