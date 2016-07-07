@@ -20,8 +20,7 @@ namespace LongMethods
 
         public void Register(float effortManHours, string description)
         {
-            var priority = GetPriorityFor(effortManHours);
-            var issue = new Issue(effortManHours, description, priority);
+            var issue = new Issue(effortManHours, description, GetPriorityFor(effortManHours));
 
             AddToTotal(effortManHours);
 
