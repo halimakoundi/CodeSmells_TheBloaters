@@ -8,9 +8,9 @@ namespace LongParameterLists
 
         public string Postcode { get; set; }
 
-        public static string GetAddressSummary(Address address)
+        public string GetAddressSummary()
         {
-            return address.City + ", " + address.Postcode + ", " + address.Country;
+            return City + ", " + Postcode + ", " + Country;
         }
     }
 }
