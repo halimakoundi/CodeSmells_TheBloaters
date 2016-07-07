@@ -4,9 +4,9 @@ namespace DataClumps
     {
         private readonly Address _address;
 
-        public Customer(string title, string firstName, string lastName, string house, string street, string city, string postCode, string country)
+        public Customer(string title, string firstName, string lastName, Address address)
         {
-            _address = new Address(house, street, city, postCode, country);
+            _address = address;
             FirstName = firstName;
             LastName = lastName;
             Title = title;
