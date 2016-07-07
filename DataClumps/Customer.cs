@@ -2,13 +2,11 @@ namespace DataClumps
 {
     public class Customer
     {
+        private readonly Address _address;
+
         public Customer(string title, string firstName, string lastName, string house, string street, string city, string postCode, string country)
         {
-            House = house;
-            Street = street;
-            City = city;
-            PostCode = postCode;
-            Country = country;
+            _address = new Address(house, street, city, postCode, country);
             FirstName = firstName;
             LastName = lastName;
             Title = title;
@@ -17,17 +15,12 @@ namespace DataClumps
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string House { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string PostCode { get; set; }
-        public string Country { get; set; }
-        
+
         public string AddressSummary
         {
             get
             {
-                return House + ", " + Street + ", " + City + ", " + PostCode + ", " + Country;
+                return _address.House + ", " + _address.Street + ", " + _address.City + ", " + _address.PostCode + ", " + _address.Country;
             }
         }
     }
