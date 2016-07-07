@@ -30,14 +30,19 @@ namespace LongMethods
             {
                 throw new ArgumentException("Cannot register tech debt where effort is bigger than 1000 man hours to fix");
             }
-            Priority priority = GetPriorityFor(effortManHours);
+            var priority = GetPriorityFor(effortManHours);
 
-            Total += effortManHours;
+            TotalAdd(effortManHours);
 
             issues.Add(new Issue(effortManHours, description, priority));
 
             var now = DateTime.Now;
             LastIssueDate = now.Date + "/" + now.Month + "/" + now.Year;
+        }
+
+        private void TotalAdd(float effortManHours)
+        {
+            Total += effortManHours;
         }
 
         private static Priority GetPriorityFor(float effortManHours)
