@@ -20,8 +20,9 @@ namespace LongParameterLists
 
         private string buildCustomerSummary(Address address)
         {
-            return Title + " " + FirstName + " " + LastName + ", " + address.City + ", "
-                   + address.Postcode + ", " + address.Country;
+            var customerSummary = Title + " " + FirstName + " " + LastName + ", ";
+            customerSummary += address.City + ", " + address.Postcode + ", " + address.Country;
+            return customerSummary;
         }
     }
 }
