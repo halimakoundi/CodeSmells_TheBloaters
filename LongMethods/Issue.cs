@@ -1,3 +1,5 @@
+using System;
+
 namespace LongMethods
 {
     public class Issue
@@ -14,10 +16,20 @@ namespace LongMethods
             Description = description;
         }
 
-        public Issue(float effortManHours, string description, Priority priority) 
+        public Issue(float effortManHours, string description, Priority priority)
             : this(effortManHours, description)
         {
-            this.Priority = priority;
+
+            ValidateEffortManHours();
+            Priority = priority;
+        }
+
+        public void ValidateEffortManHours()
+        {
+            if (EffortManHours > 1000 || EffortManHours <= 0)
+            {
+                throw new ArgumentException("Cannot register tech debt where effort is bigger than 1000 man hours to fix");
+            }
         }
     }
 }
