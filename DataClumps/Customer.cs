@@ -20,13 +20,8 @@ namespace DataClumps
         {
             get
             {
-                return Summary(_address);
+                return _address.Summary();
             }
-        }
-
-        private string Summary(Address address)
-        {
-            return address.House + ", " + address.Street + ", " + address.City + ", " + address.PostCode + ", " + address.Country;
         }
     }
 }
