@@ -5,17 +5,11 @@ namespace LongMethods
 {
     public class TechnicalDebt
     {
-        private readonly IList<Issue> issues = new List<Issue>();
+        private readonly IList<Issue> _issues = new List<Issue>();
 
         public float Total { get; private set; }
 
-        public Issue LastIssue
-        {
-            get
-            {
-                return issues[(issues.Count - 1)];
-            }
-        }
+        public Issue LastIssue => _issues[(_issues.Count - 1)];
 
         public string LastIssueDate { get; private set; }
 
@@ -30,24 +24,14 @@ namespace LongMethods
             {
                 throw new ArgumentException("Cannot register tech debt where effort is bigger than 1000 man hours to fix");
             }
-            var priority = GetPriorityFor(effortManHours);
+
+            var issue = new Issue(effortManHours, description, GetPriorityFor(effortManHours));
 
             AddToTotal(effortManHours);
 
-            issues.Add(new Issue(effortManHours, description, priority));
+            AddToIssues(issue);
 
             UpdateLastIssueDate();
-        }
-
-        private void UpdateLastIssueDate()
-        {
-            var now = DateTime.Now;
-            LastIssueDate = now.Date + "/" + now.Month + "/" + now.Year;
-        }
-
-        private void AddToTotal(float effortManHours)
-        {
-            Total += effortManHours;
         }
 
         private static Priority GetPriorityFor(float effortManHours)
@@ -70,6 +54,22 @@ namespace LongMethods
             }
 
             return priority;
+        }
+
+        private void AddToTotal(float effortManHours)
+        {
+            Total += effortManHours;
+        }
+
+        private void AddToIssues(Issue issue)
+        {
+            _issues.Add(issue);
+        }
+
+        private void UpdateLastIssueDate()
+        {
+            var now = DateTime.Now;
+            LastIssueDate = now.Date + "/" + now.Month + "/" + now.Year;
         }
     }
 }
