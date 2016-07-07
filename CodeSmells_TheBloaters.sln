@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-LongMethods", "LongMethods\2-LongMethods.csproj", "{468BCE2B-A289-46D3-A04C-7C884ED617FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongMethods.Tests", "LongMethods.Tests\LongMethods.Tests.csproj", "{9C001872-650A-4A63-A27C-48073868A418}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{468BCE2B-A289-46D3-A04C-7C884ED617FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468BCE2B-A289-46D3-A04C-7C884ED617FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468BCE2B-A289-46D3-A04C-7C884ED617FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468BCE2B-A289-46D3-A04C-7C884ED617FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C001872-650A-4A63-A27C-48073868A418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C001872-650A-4A63-A27C-48073868A418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C001872-650A-4A63-A27C-48073868A418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C001872-650A-4A63-A27C-48073868A418}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
