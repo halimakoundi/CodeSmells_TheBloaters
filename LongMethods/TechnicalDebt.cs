@@ -32,15 +32,20 @@ namespace LongMethods
             }
             var priority = GetPriorityFor(effortManHours);
 
-            TotalAdd(effortManHours);
+            AddToTotal(effortManHours);
 
             issues.Add(new Issue(effortManHours, description, priority));
 
+            UpdateLastIssueDate();
+        }
+
+        private void UpdateLastIssueDate()
+        {
             var now = DateTime.Now;
             LastIssueDate = now.Date + "/" + now.Month + "/" + now.Year;
         }
 
-        private void TotalAdd(float effortManHours)
+        private void AddToTotal(float effortManHours)
         {
             Total += effortManHours;
         }
