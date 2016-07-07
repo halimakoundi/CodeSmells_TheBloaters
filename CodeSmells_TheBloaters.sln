@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-LongMethods", "LongMethod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongMethods.Tests", "LongMethods.Tests\LongMethods.Tests.csproj", "{9C001872-650A-4A63-A27C-48073868A418}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-LongParameterLists", "LongParameterLists\3-LongParameterLists.csproj", "{C9B410E1-D26B-48BB-A7DB-421523DCD3AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongParameterLists.Tests", "LongParameterLists.Tests\LongParameterLists.Tests.csproj", "{0EA64622-8D44-4BE0-A4A4-A0C2683EFED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9C001872-650A-4A63-A27C-48073868A418}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C001872-650A-4A63-A27C-48073868A418}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C001872-650A-4A63-A27C-48073868A418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B410E1-D26B-48BB-A7DB-421523DCD3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B410E1-D26B-48BB-A7DB-421523DCD3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B410E1-D26B-48BB-A7DB-421523DCD3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B410E1-D26B-48BB-A7DB-421523DCD3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA64622-8D44-4BE0-A4A4-A0C2683EFED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA64622-8D44-4BE0-A4A4-A0C2683EFED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA64622-8D44-4BE0-A4A4-A0C2683EFED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA64622-8D44-4BE0-A4A4-A0C2683EFED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
