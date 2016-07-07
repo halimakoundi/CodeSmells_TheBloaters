@@ -10,13 +10,7 @@ namespace LongParameterLists
 
         public Address Address { get; set; }
 
-        public string Summary
-        {
-            get
-            {
-                return BuildCustomerSummary(Address);
-            }
-        }
+        public string Summary => BuildCustomerSummary(Address);
 
         private string BuildCustomerSummary(Address address)
         {
