@@ -7,5 +7,10 @@ namespace LongParameterLists
         public string Country { get; set; }
 
         public string Postcode { get; set; }
+
+        public static string GetAddressSummary(Address address)
+        {
+            return address.City + ", " + address.Postcode + ", " + address.Country;
+        }
     }
 }

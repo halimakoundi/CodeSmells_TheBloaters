@@ -21,13 +21,8 @@ namespace LongParameterLists
         private string BuildCustomerSummary(Address address)
         {
             var customerSummary = Title + " " + FirstName + " " + LastName + ", ";
-            customerSummary += GetAddressSummary(address);
+            customerSummary += Address.GetAddressSummary(address);
             return customerSummary;
-        }
-
-        private static string GetAddressSummary(Address address)
-        {
-            return address.City + ", " + address.Postcode + ", " + address.Country;
         }
     }
 }
