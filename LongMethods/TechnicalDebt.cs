@@ -20,10 +20,7 @@ namespace LongMethods
 
         public void Register(float effortManHours, string description)
         {
-            if (effortManHours > 1000 || effortManHours <= 0)
-            {
-                throw new ArgumentException("Cannot register tech debt where effort is bigger than 1000 man hours to fix");
-            }
+            ValidateEffortManHours(effortManHours);
 
             var issue = new Issue(effortManHours, description, GetPriorityFor(effortManHours));
 
@@ -32,6 +29,14 @@ namespace LongMethods
             AddToIssues(issue);
 
             UpdateLastIssueDate();
+        }
+
+        private static void ValidateEffortManHours(float effortManHours)
+        {
+            if (effortManHours > 1000 || effortManHours <= 0)
+            {
+                throw new ArgumentException("Cannot register tech debt where effort is bigger than 1000 man hours to fix");
+            }
         }
 
         private static Priority GetPriorityFor(float effortManHours)
