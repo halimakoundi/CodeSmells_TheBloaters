@@ -5,11 +5,17 @@ namespace LongMethods
 {
     public class TechnicalDebt
     {
-        private readonly IList<Issue> _issues = new List<Issue>();
+        private readonly IList<Issue> issues = new List<Issue>();
 
         public float Total { get; private set; }
 
-        public Issue LastIssue => _issues[(_issues.Count - 1)];
+        public Issue LastIssue
+        {
+            get
+            {
+                return issues[(issues.Count - 1)];
+            }
+        }
 
         public string LastIssueDate { get; private set; }
 
@@ -20,23 +26,16 @@ namespace LongMethods
 
         public void Register(float effortManHours, string description)
         {
-            var issue = new Issue(effortManHours, description);
+            UpdateWith(Issue.WithEffortAndDescription(effortManHours, description));
+        }
 
-            AddToTotal(effortManHours);
+        private void UpdateWith(Issue issue)
+        {
+            issues.Add(issue);
 
-            AddToIssues(issue);
+            Total += issue.EffortManHours;
 
             UpdateLastIssueDate();
-        }
-
-        private void AddToTotal(float effortManHours)
-        {
-            Total += effortManHours;
-        }
-
-        private void AddToIssues(Issue issue)
-        {
-            _issues.Add(issue);
         }
 
         private void UpdateLastIssueDate()
